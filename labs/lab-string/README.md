@@ -562,7 +562,7 @@ foo
 
 **P9** — ¿Por qué `(void)argc` suprime un warning? ¿Cuándo sería necesario usar `argc`?
 
-> R:
+> R:(void)argc suprime el warning de variables sin usar, porque no vamos a usar argc. Sería necesario usar argc cuando necesitamos saber de antemano cuántos argumentos se pasaron.
 
 ---
 
