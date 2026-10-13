@@ -662,15 +662,15 @@ _(SI o NO)_
 
 **P10** — `GetLength` es recursiva pero en C una llamada recursiva consume un stack frame. Si llamaras `GetLength` con un string de 1.000.000 de caracteres, ¿qué pasaría? ¿Cómo lo resolverías?
 
-> R:
+> R:Se produciría un desbordamiento (overflow) porque se estaría llamando 1M de veces y colapsaría. Lo resolvería usando un while con un contador dentro.
 
 **P11** — En la Parte III, todos los programas usan `char **arg` para iterar en vez de un índice entero. ¿Qué ventaja tiene este estilo? ¿Cuándo sería preferible usar el índice?
 
-> R:
+> R:Se tiene como ventaja que omitimos al argc o en si un indice, se avanza directamente hasta NULL. Sería preferible usar el índice cuando necesitás saber el número de posición del argumento o acceder a posiciones específicas de forma directa.
 
 **P12** — En C, `"hola"` es un literal de tipo `const char *`. Si intentaras modificar un carácter con `s[0] = 'H'`, el comportamiento es indefinido. ¿Por qué? ¿En qué parte de la memoria viven los literales?
 
-> R:
+> R:Porque al ser un const, no se puede modificar, es solo de lectura, no de escritura. Los literales viven en memoria estática o segmento de datos. 
 
 ---
 
