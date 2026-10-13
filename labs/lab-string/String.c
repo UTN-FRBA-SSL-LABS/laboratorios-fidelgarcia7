@@ -48,6 +48,11 @@ int AreDecimalDigits(const char *s) {
 /* ── Contains — implementar completo ────────────────────────────────────── */
 
 int Contains(const char *s, char c) {
-    (void)s; (void)c;
-    return 0;  /* reemplazar con la implementacion */
+    if (IsEmpty(s))     return 0; //si es vacia no contiene nada: 0
+    
+    else if (*s == c)   return 1; //si el primer caracter es el que buscamos: 1
+    
+    else{
+        return Contains(s+1, c); //el buscador en si.
+    }
 }
