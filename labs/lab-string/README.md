@@ -467,7 +467,7 @@ Antes de implementar, discutí con tu equipo:
 
 **P6** — Conclusión de la discusión:
 
-> R:
+> R:Es correcto tenerla en un módulo separado Conversion para separar responsabilidades: String solo se encarga de operar sobre cadenas, no le interesa el contenido, mientras que Conversion se encarga de transformar entre distintos tipos de datos, si le interesa.
 
 ---
 
@@ -494,7 +494,7 @@ int ToInteger(const char *s) {
 
 **P7** — El loop acumula correctamente el valor en `resultado`. ¿Qué está mal en el `return`?
 
-> R:
+> R:No está retornando correctamente el resultado, ni siquiera está puesto en sí.
 
 #### Corrección
 
@@ -506,10 +506,10 @@ make test
 
 **P8** — La expresión `*s - '0'` convierte un carácter dígito al entero correspondiente. ¿Por qué funciona? ¿Qué devuelve `'3' - '0'`?
 
-> R:
+> R:Funciona porque se usa la tabla ASCII, donde los dígitos están del 0 al 9 en orden consecutivo. Al hacer '- 0' estás restando la posición donde arrancan los números en la tabla, obteniendo el valor entero. '3' - '0' devuelve 3.
 
 ```
-TOINTEGER_PASA=
+TOINTEGER_PASA=SI
 ```
 _(escribí SI cuando todos los tests de ToInteger pasen)_
 
